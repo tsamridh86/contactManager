@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.example.android.sql_test.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/editingArea"
+        android:layout_alignParentTop="true">
 
     <EditText
         android:layout_width="match_parent"
@@ -20,43 +25,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/inputNumber"
         android:inputType="number"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:weightSum="3">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:id="@+id/addButton"
-            android:onClick="addButtonClicked"
-            android:layout_weight="1"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Display"
-            android:id="@+id/displayButton"
-            android:onClick="displayButtonClicked"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:id="@+id/deleteButton"
-            android:onClick="deleteButtonClicked"
-            android:layout_weight="1"/>
-
     </LinearLayout>
-    <LinearLayout
+
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="3">
-        <TextView
+        android:weightSum="3"
+        android:layout_below="@id/editingArea">
+         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Id"
@@ -79,4 +57,69 @@
             android:id="@+id/outputTextNumber"/>
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/advancedBoxes">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:id="@+id/updateButton"
+            android:onClick="updateButtonClicked"
+            android:layout_weight="1"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/searchButton"
+            android:onClick="searchButtonClicked"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wipe"
+            android:id="@+id/wipeButton"
+            android:onClick="wipeButtonClicked"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/advancedBoxes">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:id="@+id/deleteButton"
+            android:onClick="deleteButtonClicked"
+            android:layout_weight="1"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/addButton"
+            android:onClick="addButtonClicked"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display"
+            android:id="@+id/displayButton"
+            android:onClick="displayButtonClicked"
+            android:layout_weight="1"
+             />
+    </LinearLayout>
+
+</RelativeLayout>
